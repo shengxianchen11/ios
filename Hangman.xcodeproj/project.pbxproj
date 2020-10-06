@@ -99,10 +99,10 @@
 			children = (
 				7FB5D0932523A885005B32FB /* HangmanApp.swift */,
 				7FB5D0952523A885005B32FB /* ContentView.swift */,
+				7FB5D0C12523A8D7005B32FB /* HangmanState.swift */,
 				7FB5D0972523A88C005B32FB /* Assets.xcassets */,
 				7FB5D09C2523A88C005B32FB /* Info.plist */,
 				7FB5D0992523A88C005B32FB /* Preview Content */,
-				7FB5D0C12523A8D7005B32FB /* HangmanState.swift */,
 			);
 			path = Hangman;
 			sourceTree = "<group>";
