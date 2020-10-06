@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @ObservedObject var model = HangmanState()
+    
     let buttonValues: [[String]] = [
         ["A", "B", "C", "D", "E", "F", "G"],
         ["H", "I", "J", "K", "L", "M", "N"],
@@ -21,52 +23,50 @@ struct ContentView: View {
         VStack {
             
             HStack {
-                Button(action: {
-                    
-                }, label: {
-                    Text("Exit game")
-                }).padding(.leading, 15)
                 Spacer()
                 Button(action: {
-                    
+                    model.restart()
                 }, label: {
                     Text("Restart")
                 }).padding(.trailing, 15)
             }.padding(.bottom, UIScreen.main.bounds.height * 0.05)
             
-            Image("hangman1")
-            Text("-----").font(.system(size: 50)).padding()
-            Text("Incorrect guesses: ").frame(minWidth: 0, maxWidth: .infinity, alignment: .leading).padding(.leading, 15)
+            Image("hangman\(model.index)")
+            Text(model.getProgress()).font(.system(size: 50)).padding()
+            Text("Incorrect guesses: " + String(model.incorrect)).frame(minWidth: 0, maxWidth: .infinity, alignment: .leading).padding(.leading, 15)
             
-            Spacer()
             
             ForEach(buttonValues, id: \.self) {row in
                 HStack {
                     ForEach(row, id: \.self) {button in
-                        KeyboardButtonView(buttonLabel: button, buttonRow: row)
+                        KeyboardButtonView(model: model, buttonLabel: button, buttonRow: row)
                     }
                 }
             }
             
-        }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top).padding(.bottom, UIScreen.main.bounds.height * 0.05)
+        }.padding(5)
+        .alert(isPresented: $model.gameOver) {
+            Alert(title: Text("Game Over"),
+                  message: Text(model.getFinalMessage()),
+                  dismissButton: .default(Text("Ok"), action: { model.restart()}))
+        }
     }
 }
 
 struct KeyboardButtonView: View {
     
+    @ObservedObject var model: HangmanState
     var buttonLabel: String
     var buttonRow: [String]
     
     var body: some View {
         
         Button(action: {
-            // TODO: Add button tap functionality
-            
+            model.makeGuess(guess: Character(buttonLabel))
         }, label: {
             Text(buttonLabel)
                 .frame(width: self.buttonWidth(row: buttonRow), height: self.buttonHeight())
         })
-        
     }
     
     func buttonWidth(row: [String]) -> CGFloat {

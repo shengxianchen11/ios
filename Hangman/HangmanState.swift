@@ -12,6 +12,7 @@ class HangmanState : ObservableObject {
     @Published var index: Int = 0
     @Published var progress: String = ""
     @Published var incorrect: [Character] = []
+    @Published var gameOver: Bool = false
     
     let phrases: [String] = ["hello", "goodbye", "bears", "corona", "covid", "facemask", "macbook", "oski"]
     let validChars: String = "abcdefghijklmnopqrstuvwxyz"
@@ -20,9 +21,7 @@ class HangmanState : ObservableObject {
     
     /** Initializes a new game. */
     init() {
-        self.phrase = self.phrases.randomElement()
-        self.progress = ""
-        self.incorrect = []
+        restart()
     }
     
     /** Get functions to control access for each Hangman instance's properties. */
@@ -34,8 +33,12 @@ class HangmanState : ObservableObject {
     
     func restart() {
         self.phrase = self.phrases.randomElement()
-        self.progress = ""
+        self.progress = String(phrase.map{_ in Character("-")})
         self.incorrect = []
+        self.index = 0
+        self.gameOver = false
+        
+        print(phrase!)
     }
     
     /**
@@ -60,19 +63,27 @@ class HangmanState : ObservableObject {
      */
     func makeGuess(guess letter: Character) {
         
+        print(letter)
         let lc_letter = Character(letter.lowercased())
-        lastGuess = String(lc_letter).lowercased()
-        
+        lastGuess = String(lc_letter)
+        print(incorrect, incorrect.contains(lc_letter), phrase.contains(lc_letter))
         if !incorrect.contains(lc_letter) {
-            if phrase.contains(letter) {
-                let progressTemp = phrase.map{char in (char == lc_letter) || progress.contains(char) ? char :  Character("_")}
-                progress = String(progressTemp)
+            if phrase.contains(lc_letter) {
+                let progressTemp = phrase.map{char in (char == lc_letter) || progress.contains(char) ? char :  Character("-")}
+                self.progress = String(progressTemp)
             } else {
                 incorrect.append(lc_letter)
+                index += 1
             }
         } else {
             // TODO: show alert to user that they have already guessed that letter
         }
+        
+        if (didWin() || didLose()) {
+            gameOver.toggle()
+        }
+           
+        print(progress)
     }
     
     /**
