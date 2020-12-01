@@ -21,3 +21,22 @@ class NormalMode : ObservableObject {
     }
     
 }
+
+class ChallengeMode : ObservableObject {
+    init() {
+        
+    }
+    func didWin() {
+        
+    }
+    func didLose() {
+        
+    }
+}
+
+class ImageMode : ObservableObject {
+    init() {
+        
+    }
+    
+}

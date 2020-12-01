@@ -13,14 +13,11 @@
 		849709FE2575E18A001D5543 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849709FD2575E18A001D5543 /* Preview Assets.xcassets */; };
 		84970A092575E18B001D5543 /* FinalProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A082575E18B001D5543 /* FinalProjectTests.swift */; };
 		84970A142575E18B001D5543 /* FinalProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A132575E18B001D5543 /* FinalProjectUITests.swift */; };
-		84970A252575E1C5001D5543 /* NormalGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A242575E1C5001D5543 /* NormalGameModel.swift */; };
+		84970A252575E1C5001D5543 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A242575E1C5001D5543 /* GameModel.swift */; };
 		84970A2A2575FDE9001D5543 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A292575FDE9001D5543 /* BoardView.swift */; };
 		84970A2F2575FE07001D5543 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A2E2575FE07001D5543 /* SquareView.swift */; };
-		84970A342575FF9D001D5543 /* FourByFourGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A332575FF9D001D5543 /* FourByFourGameView.swift */; };
 		84970A3925760167001D5543 /* FiveByFiveGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A3825760167001D5543 /* FiveByFiveGameView.swift */; };
-		84970A49257601FB001D5543 /* ImageGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A48257601FB001D5543 /* ImageGameModel.swift */; };
-		84970A512576022C001D5543 /* ChallengeGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A502576022C001D5543 /* ChallengeGameModel.swift */; };
-		84970A5625760250001D5543 /* DailyLifeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A5525760250001D5543 /* DailyLifeModel.swift */; };
+		84970A5E257605B5001D5543 /* FourByFourGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A5D257605B5001D5543 /* FourByFourGameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,14 +50,11 @@
 		84970A0F2575E18B001D5543 /* FinalProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84970A132575E18B001D5543 /* FinalProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalProjectUITests.swift; sourceTree = "<group>"; };
 		84970A152575E18B001D5543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84970A242575E1C5001D5543 /* NormalGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalGameModel.swift; sourceTree = "<group>"; };
+		84970A242575E1C5001D5543 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		84970A292575FDE9001D5543 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		84970A2E2575FE07001D5543 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
-		84970A332575FF9D001D5543 /* FourByFourGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourByFourGameView.swift; sourceTree = "<group>"; };
 		84970A3825760167001D5543 /* FiveByFiveGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveByFiveGameView.swift; sourceTree = "<group>"; };
-		84970A48257601FB001D5543 /* ImageGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGameModel.swift; sourceTree = "<group>"; };
-		84970A502576022C001D5543 /* ChallengeGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeGameModel.swift; sourceTree = "<group>"; };
-		84970A5525760250001D5543 /* DailyLifeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLifeModel.swift; sourceTree = "<group>"; };
+		84970A5D257605B5001D5543 /* FourByFourGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourByFourGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,14 +107,11 @@
 			children = (
 				849709F62575E184001D5543 /* FinalProjectApp.swift */,
 				849709F82575E184001D5543 /* ContentView.swift */,
-				84970A242575E1C5001D5543 /* NormalGameModel.swift */,
-				84970A502576022C001D5543 /* ChallengeGameModel.swift */,
-				84970A48257601FB001D5543 /* ImageGameModel.swift */,
-				84970A5525760250001D5543 /* DailyLifeModel.swift */,
+				84970A3825760167001D5543 /* FiveByFiveGameView.swift */,
+				84970A5D257605B5001D5543 /* FourByFourGameView.swift */,
+				84970A242575E1C5001D5543 /* GameModel.swift */,
 				84970A292575FDE9001D5543 /* BoardView.swift */,
 				84970A2E2575FE07001D5543 /* SquareView.swift */,
-				84970A332575FF9D001D5543 /* FourByFourGameView.swift */,
-				84970A3825760167001D5543 /* FiveByFiveGameView.swift */,
 				849709FA2575E18A001D5543 /* Assets.xcassets */,
 				849709FF2575E18A001D5543 /* Info.plist */,
 				849709FC2575E18A001D5543 /* Preview Content */,
@@ -283,16 +274,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84970A252575E1C5001D5543 /* NormalGameModel.swift in Sources */,
+				84970A252575E1C5001D5543 /* GameModel.swift in Sources */,
 				84970A3925760167001D5543 /* FiveByFiveGameView.swift in Sources */,
 				84970A2F2575FE07001D5543 /* SquareView.swift in Sources */,
+				84970A5E257605B5001D5543 /* FourByFourGameView.swift in Sources */,
 				84970A2A2575FDE9001D5543 /* BoardView.swift in Sources */,
-				84970A512576022C001D5543 /* ChallengeGameModel.swift in Sources */,
-				84970A49257601FB001D5543 /* ImageGameModel.swift in Sources */,
 				849709F92575E184001D5543 /* ContentView.swift in Sources */,
-				84970A342575FF9D001D5543 /* FourByFourGameView.swift in Sources */,
 				849709F72575E184001D5543 /* FinalProjectApp.swift in Sources */,
-				84970A5625760250001D5543 /* DailyLifeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
