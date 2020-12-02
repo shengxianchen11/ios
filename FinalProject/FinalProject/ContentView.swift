@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     private let screenWidth : CGFloat = UIScreen.main.bounds.width
     private let screenHeight : CGFloat = UIScreen.main.bounds.height
     

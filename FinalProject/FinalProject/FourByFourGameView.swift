@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct FourByFourGameView: View {
-    @EnvironmentObject var model : ChallengeMode
-    
+    @EnvironmentObject var env : ImageMode
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
