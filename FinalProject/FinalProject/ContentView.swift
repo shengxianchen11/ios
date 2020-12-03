@@ -12,38 +12,36 @@ struct ContentView: View {
     private let screenHeight : CGFloat = UIScreen.main.bounds.height
     
     var body: some View {
-        NavigationView {
             VStack {
-                Text("2048").font(.system(size: screenWidth / 5 - 10)).bold().foregroundColor(Color.gray).padding()
+                Text("2048").font(.system(size: screenWidth / 5)).bold().foregroundColor(Color(#colorLiteral(red: 0.4582719207, green: 0.4315778613, blue: 0.3829891086, alpha: 1))).padding()
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                     ZStack {
-                        RoundedRectangle(cornerRadius: 5).frame(width: screenWidth / 2 + 20, height: screenWidth / 5 - 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(Color(#colorLiteral(red: 0.8384206891, green: 0.8656702638, blue: 0, alpha: 1)))
+                        RoundedRectangle(cornerRadius: 5).frame(width: screenWidth / 2 + 20, height: screenWidth / 5 - 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(Color(#colorLiteral(red: 0.9291673303, green: 0.7658008933, blue: 0.2970429659, alpha: 1)))
                         Text("Normal Mode").foregroundColor(.white).font(.callout)
                     }
                 }.padding()
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                     ZStack {
-                        RoundedRectangle(cornerRadius: 5).frame(width: screenWidth / 2 + 20, height: screenWidth / 5 - 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(Color(#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)))
+                        RoundedRectangle(cornerRadius: 5).frame(width: screenWidth / 2 + 20, height: screenWidth / 5 - 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(Color(#colorLiteral(red: 0.9511918426, green: 0.4921440482, blue: 0.3839553595, alpha: 1)))
                         Text("Challenging Mode").foregroundColor(.white).font(.callout)
                     }
                 }.padding()
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                     ZStack {
-                        RoundedRectangle(cornerRadius: 5).frame(width: screenWidth / 2 + 20, height: screenWidth / 5 - 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
+                        RoundedRectangle(cornerRadius: 5).frame(width: screenWidth / 2 + 20, height: screenWidth / 5 - 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(Color(#colorLiteral(red: 0.6447030306, green: 0.5756409764, blue: 0.5053991675, alpha: 1)))
                         Text("Daily Life").foregroundColor(.white).font(.callout)
                     }
                 }.padding()
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                     ZStack {
-                        RoundedRectangle(cornerRadius: 5).frame(width: screenWidth / 2 + 20, height: screenWidth / 5 - 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(Color(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)))
+                        RoundedRectangle(cornerRadius: 5).frame(width: screenWidth / 2 + 20, height: screenWidth / 5 - 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(Color(#colorLiteral(red: 0.03748401999, green: 0.7342836261, blue: 0.9375606179, alpha: 1)))
                         Text("Image Mode").foregroundColor(.white).font(.callout)
                     }
                 }.padding()
                 
                 Spacer()
                 
-            }.frame(width: screenWidth, height: screenHeight, alignment: .top).padding().background(Color(#colorLiteral(red: 0.9625877738, green: 0.9856839776, blue: 1, alpha: 1)))
-        }
+            }.frame(width: screenWidth, height: screenHeight, alignment: .top).padding().background(Color(#colorLiteral(red: 0.986433208, green: 0.9689233899, blue: 0.9336025119, alpha: 1)))
     }
 }
 

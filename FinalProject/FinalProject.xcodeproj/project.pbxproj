@@ -14,12 +14,12 @@
 		84970A092575E18B001D5543 /* FinalProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A082575E18B001D5543 /* FinalProjectTests.swift */; };
 		84970A142575E18B001D5543 /* FinalProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A132575E18B001D5543 /* FinalProjectUITests.swift */; };
 		84970A252575E1C5001D5543 /* NormalMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A242575E1C5001D5543 /* NormalMode.swift */; };
-		84970A2A2575FDE9001D5543 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A292575FDE9001D5543 /* BoardView.swift */; };
 		84970A2F2575FE07001D5543 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A2E2575FE07001D5543 /* SquareView.swift */; };
 		84970A3925760167001D5543 /* FiveByFiveGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A3825760167001D5543 /* FiveByFiveGameView.swift */; };
 		84970A5E257605B5001D5543 /* FourByFourGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A5D257605B5001D5543 /* FourByFourGameView.swift */; };
 		84970A7225771088001D5543 /* ChallengeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A7125771088001D5543 /* ChallengeMode.swift */; };
 		84970A772577109D001D5543 /* ImageMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A762577109D001D5543 /* ImageMode.swift */; };
+		84EFD5FB25783F8400C22C9A /* SquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFD5FA25783F8400C22C9A /* SquareCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,12 +53,12 @@
 		84970A132575E18B001D5543 /* FinalProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalProjectUITests.swift; sourceTree = "<group>"; };
 		84970A152575E18B001D5543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84970A242575E1C5001D5543 /* NormalMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalMode.swift; sourceTree = "<group>"; };
-		84970A292575FDE9001D5543 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		84970A2E2575FE07001D5543 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		84970A3825760167001D5543 /* FiveByFiveGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveByFiveGameView.swift; sourceTree = "<group>"; };
 		84970A5D257605B5001D5543 /* FourByFourGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourByFourGameView.swift; sourceTree = "<group>"; };
 		84970A7125771088001D5543 /* ChallengeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeMode.swift; sourceTree = "<group>"; };
 		84970A762577109D001D5543 /* ImageMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMode.swift; sourceTree = "<group>"; };
+		84EFD5FA25783F8400C22C9A /* SquareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +113,10 @@
 				849709F82575E184001D5543 /* ContentView.swift */,
 				84970A3825760167001D5543 /* FiveByFiveGameView.swift */,
 				84970A5D257605B5001D5543 /* FourByFourGameView.swift */,
+				84EFD5FA25783F8400C22C9A /* SquareCell.swift */,
 				84970A242575E1C5001D5543 /* NormalMode.swift */,
 				84970A7125771088001D5543 /* ChallengeMode.swift */,
 				84970A762577109D001D5543 /* ImageMode.swift */,
-				84970A292575FDE9001D5543 /* BoardView.swift */,
 				84970A2E2575FE07001D5543 /* SquareView.swift */,
 				849709FA2575E18A001D5543 /* Assets.xcassets */,
 				849709FF2575E18A001D5543 /* Info.plist */,
@@ -280,11 +280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EFD5FB25783F8400C22C9A /* SquareCell.swift in Sources */,
 				84970A252575E1C5001D5543 /* NormalMode.swift in Sources */,
 				84970A3925760167001D5543 /* FiveByFiveGameView.swift in Sources */,
 				84970A2F2575FE07001D5543 /* SquareView.swift in Sources */,
 				84970A5E257605B5001D5543 /* FourByFourGameView.swift in Sources */,
-				84970A2A2575FDE9001D5543 /* BoardView.swift in Sources */,
 				849709F92575E184001D5543 /* ContentView.swift in Sources */,
 				84970A7225771088001D5543 /* ChallengeMode.swift in Sources */,
 				849709F72575E184001D5543 /* FinalProjectApp.swift in Sources */,
