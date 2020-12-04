@@ -11,7 +11,7 @@ import SwiftUI
 struct FinalProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            FourByFourGameView().environmentObject(NormalMode())
+            ContentView().environmentObject(NormalMode())
         }
     }
 }

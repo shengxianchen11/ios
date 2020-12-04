@@ -27,8 +27,8 @@ class NormalMode : ObservableObject {
         self.curBoard.removeAll()
         self.tempBoard.removeAll()
         for _ in 0..<boardsize * boardsize {
-            self.curBoard.append(0)
-            self.tempBoard.append(0)
+            self.curBoard.append(8)
+            self.tempBoard.append(8)
         }
         
         generateNewNum()
@@ -267,20 +267,20 @@ class NormalMode : ObservableObject {
     func didLose() -> Bool {
         for item in self.curBoard {
             if item == 0 {
-                
                 return false
             }
             
         }
+        var check : Bool = false
         for row in 0..<boardsize {
             for col in 0..<boardsize {
-                if !neighbor(row: row, col: col, curVal: self.curBoard[row * boardsize + col]) {
-                    gameState = true
-                    endingInfo = "You Lose!"
-                    return true
-                }
+                check = check || neighbor(row: row, col: col, curVal: curBoard[row * boardsize + col])
             }
         }
-        return false
+        if (!check) {
+            endingInfo = "You lose the game"
+            gameState = true
+        }
+        return !check
     }
 }

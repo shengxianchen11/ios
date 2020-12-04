@@ -25,7 +25,7 @@ struct FourByFourGameView: View {
                         RoundedRectangle(cornerRadius: 10).frame(width: screenWidth / 3.5, height: screenWidth / 5).foregroundColor(Color(#colorLiteral(red: 0.7184799314, green: 0.6823766828, blue: 0.6295595765, alpha: 1)))
                         VStack {
                             Text("Score").foregroundColor(.white)
-                            Text("\(env.currentScore)").foregroundColor(.white).bold().font(.title)
+                            Text("\(String(env.currentScore))").foregroundColor(.white).bold().font(.title)
                         }
                     }
                     
@@ -47,7 +47,7 @@ struct FourByFourGameView: View {
                         RoundedRectangle(cornerRadius: 10).frame(width: screenWidth / 3.5, height: screenWidth / 5).foregroundColor(Color(#colorLiteral(red: 0.7184799314, green: 0.6823766828, blue: 0.6295595765, alpha: 1)))
                         VStack {
                             Text("Highest").foregroundColor(.white)
-                            Text("\(env.highestScore)").foregroundColor(.white).bold().font(.title)
+                            Text("\(String(env.highestScore))").foregroundColor(.white).bold().font(.title)
                         }
                     }
                     
