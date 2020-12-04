@@ -15,26 +15,26 @@ class NormalMode : ObservableObject {
     @Published var highestScore : Int = 0
     private var tempBoard : [Int] = []
     @Published var curSquares : [Square] = []
+    @Published var endingInfo : String = ""
     
     init() {
         restart()
     }
     
     func restart() {
+        gameState = false
+        currentScore = 0
         self.curBoard.removeAll()
         self.tempBoard.removeAll()
         for _ in 0..<boardsize * boardsize {
-            self.curBoard.append(4)
-            self.tempBoard.append(4)
+            self.curBoard.append(0)
+            self.tempBoard.append(0)
         }
         
-        //generateNewNum()
-        //generateNewNum()
+        generateNewNum()
+        generateNewNum()
         copy(from: &curBoard, to: &tempBoard)
         setSquare()
-        for col in curBoard {
-            print("before", col)
-        }
     }
     
     func setSquare() {
@@ -128,15 +128,9 @@ class NormalMode : ObservableObject {
                 current[col].append(self.curBoard[row * boardsize + col])
             }
         }
-        for col in current {
-            print("before", col)
-        }
         for col in 0..<boardsize {
             let new  = operate(lst: current[col])
             current[col] = new
-        }
-        for col in current {
-            print("after", col)
         }
         for col in 0..<boardsize {
             for row in 0..<boardsize {
@@ -209,6 +203,10 @@ class NormalMode : ObservableObject {
                     touch.append(temp - 1)
                     new[temp - 1] = curr + prev
                     new[temp] = 0
+                    currentScore += curr + prev
+                    if (currentScore > highestScore) {
+                        highestScore = currentScore
+                    }
                 } else if prev == 0 {
                     new[temp - 1] = curr
                     new[temp] = 0
@@ -278,6 +276,7 @@ class NormalMode : ObservableObject {
             for col in 0..<boardsize {
                 if !neighbor(row: row, col: col, curVal: self.curBoard[row * boardsize + col]) {
                     gameState = true
+                    endingInfo = "You Lose!"
                     return true
                 }
             }

@@ -67,7 +67,9 @@ struct FourByFourGameView: View {
             Spacer().frame(width: screenWidth, height: screenHeight / 7, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             BoardView().padding().environmentObject(env)
             Spacer()
-        }.frame(width: screenWidth, height: screenHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding().background(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+        }.frame(width: screenWidth, height: screenHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding().background(Color(#colorLiteral(red: 0.976922214, green: 0.9693550467, blue: 0.9294282794, alpha: 1))).alert(isPresented: $env.gameState) {
+            Alert(title: Text(env.endingInfo), dismissButton: .default(Text("Okay!")))
+            }
     }
 }
 
@@ -90,8 +92,8 @@ struct BoardView: View {
                 ForEach(env.curSquares, id : \.id) { item in
                     SquareView(sq:item).frame(width: width / 4 - 4, height: width / 4 - 4)
                 }
-            }.animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
-        }.modifier(SwipeModifier())
+            }.animation(.easeInOut(duration: 0.5)).modifier(SwipeModifier())
+        }
     }
 }
 
@@ -100,22 +102,18 @@ struct SwipeModifier : ViewModifier {
     func body(content: Content) -> some View {
         return content.gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onEnded({ value in
             if value.translation.width < 0 && abs(value.translation.width) > abs(value.translation.height){
-                print("swipe left")
                 env.swipeLeft()
             }
 
             else if value.translation.width > 0 && abs(value.translation.width) > abs(value.translation.height){
-                print("swipe right")
                 env.swipeRight()
             }
             
             else if value.translation.height < 0 && abs(value.translation.width) < abs(value.translation.height) {
-                print("swipe top")
                 env.swipeTop()
             }
 
             if value.translation.height > 0 && abs(value.translation.width) < abs(value.translation.height) {
-                print("swipe bottom")
                 env.swipeBottom()
             }
         }))
