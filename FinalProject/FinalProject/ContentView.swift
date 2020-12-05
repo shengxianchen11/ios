@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var env : NormalMode
+    @EnvironmentObject var pic : PicMode
     private let screenWidth : CGFloat = UIScreen.main.bounds.width
     private let screenHeight : CGFloat = UIScreen.main.bounds.height
     @State var selection: String? = nil
+    @State var select: Int? = nil
     var body: some View {
         NavigationView {
             VStack {
@@ -38,12 +40,17 @@ struct ContentView: View {
                         Text("Daily Life").foregroundColor(.white).font(.callout)
                     }
                 }.padding()
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+//                NavigationLink (
+//                    destination: PicGameView().environmentObject(pic).navigationBarBackButtonHidden(true).navigationBarHidden(true), tag: 4, selection: $select) {
+//
+//                }
+                Button(action: {}) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 5).frame(width: screenWidth / 2 + 20, height: screenWidth / 5 - 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(Color(#colorLiteral(red: 0.03748401999, green: 0.7342836261, blue: 0.9375606179, alpha: 1)))
                         Text("Image Mode").foregroundColor(.white).font(.callout)
                     }
                 }.padding()
+                
                 
                 Spacer()
                 

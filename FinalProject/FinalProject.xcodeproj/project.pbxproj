@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DB62BA8257B88510092AD3A /* FBoardMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB62BA7257B88510092AD3A /* FBoardMode.swift */; };
+		4DB62BB0257B97F30092AD3A /* PicSqView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB62BAF257B97F30092AD3A /* PicSqView.swift */; };
+		4DB62BB8257B9C620092AD3A /* PicMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB62BB7257B9C620092AD3A /* PicMode.swift */; };
+		4DB62BCC257B9D640092AD3A /* PicGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB62BCB257B9D640092AD3A /* PicGameView.swift */; };
 		849709F72575E184001D5543 /* FinalProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849709F62575E184001D5543 /* FinalProjectApp.swift */; };
 		849709F92575E184001D5543 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849709F82575E184001D5543 /* ContentView.swift */; };
 		849709FB2575E18A001D5543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849709FA2575E18A001D5543 /* Assets.xcassets */; };
@@ -42,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4DB62BA7257B88510092AD3A /* FBoardMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBoardMode.swift; sourceTree = "<group>"; };
+		4DB62BAF257B97F30092AD3A /* PicSqView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicSqView.swift; sourceTree = "<group>"; };
+		4DB62BB7257B9C620092AD3A /* PicMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicMode.swift; sourceTree = "<group>"; };
+		4DB62BCB257B9D640092AD3A /* PicGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicGameView.swift; sourceTree = "<group>"; };
 		849709F32575E184001D5543 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849709F62575E184001D5543 /* FinalProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalProjectApp.swift; sourceTree = "<group>"; };
 		849709F82575E184001D5543 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,10 +128,14 @@
 				849BF8AB257B6B96008E6023 /* FourByFourChallenge.swift */,
 				84EFD5FA25783F8400C22C9A /* SquareCell.swift */,
 				84970A242575E1C5001D5543 /* NormalMode.swift */,
+				4DB62BA7257B88510092AD3A /* FBoardMode.swift */,
 				84970A7125771088001D5543 /* ChallengeMode.swift */,
 				849BF8A6257B6311008E6023 /* ChallengeView.swift */,
 				84970A762577109D001D5543 /* ImageMode.swift */,
 				84970A2E2575FE07001D5543 /* SquareView.swift */,
+				4DB62BCB257B9D640092AD3A /* PicGameView.swift */,
+				4DB62BB7257B9C620092AD3A /* PicMode.swift */,
+				4DB62BAF257B97F30092AD3A /* PicSqView.swift */,
 				849709FA2575E18A001D5543 /* Assets.xcassets */,
 				849709FF2575E18A001D5543 /* Info.plist */,
 				849709FC2575E18A001D5543 /* Preview Content */,
@@ -288,12 +300,16 @@
 			files = (
 				849BF8AC257B6B96008E6023 /* FourByFourChallenge.swift in Sources */,
 				84EFD5FB25783F8400C22C9A /* SquareCell.swift in Sources */,
+				4DB62BA8257B88510092AD3A /* FBoardMode.swift in Sources */,
 				84970A252575E1C5001D5543 /* NormalMode.swift in Sources */,
 				84970A3925760167001D5543 /* FiveByFiveGameView.swift in Sources */,
 				84970A2F2575FE07001D5543 /* SquareView.swift in Sources */,
 				84970A5E257605B5001D5543 /* FourByFourGameView.swift in Sources */,
 				849709F92575E184001D5543 /* ContentView.swift in Sources */,
+				4DB62BB0257B97F30092AD3A /* PicSqView.swift in Sources */,
+				4DB62BB8257B9C620092AD3A /* PicMode.swift in Sources */,
 				84970A7225771088001D5543 /* ChallengeMode.swift in Sources */,
+				4DB62BCC257B9D640092AD3A /* PicGameView.swift in Sources */,
 				849709F72575E184001D5543 /* FinalProjectApp.swift in Sources */,
 				849BF8A7257B6311008E6023 /* ChallengeView.swift in Sources */,
 				84970A772577109D001D5543 /* ImageMode.swift in Sources */,
