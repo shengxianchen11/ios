@@ -19,6 +19,8 @@
 		84970A5E257605B5001D5543 /* FourByFourGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A5D257605B5001D5543 /* FourByFourGameView.swift */; };
 		84970A7225771088001D5543 /* ChallengeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A7125771088001D5543 /* ChallengeMode.swift */; };
 		84970A772577109D001D5543 /* ImageMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84970A762577109D001D5543 /* ImageMode.swift */; };
+		849BF8A7257B6311008E6023 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BF8A6257B6311008E6023 /* ChallengeView.swift */; };
+		849BF8AC257B6B96008E6023 /* FourByFourChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BF8AB257B6B96008E6023 /* FourByFourChallenge.swift */; };
 		84EFD5FB25783F8400C22C9A /* SquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFD5FA25783F8400C22C9A /* SquareCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		84970A5D257605B5001D5543 /* FourByFourGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourByFourGameView.swift; sourceTree = "<group>"; };
 		84970A7125771088001D5543 /* ChallengeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeMode.swift; sourceTree = "<group>"; };
 		84970A762577109D001D5543 /* ImageMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMode.swift; sourceTree = "<group>"; };
+		849BF8A6257B6311008E6023 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
+		849BF8AB257B6B96008E6023 /* FourByFourChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourByFourChallenge.swift; sourceTree = "<group>"; };
 		84EFD5FA25783F8400C22C9A /* SquareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,9 +117,11 @@
 				849709F82575E184001D5543 /* ContentView.swift */,
 				84970A3825760167001D5543 /* FiveByFiveGameView.swift */,
 				84970A5D257605B5001D5543 /* FourByFourGameView.swift */,
+				849BF8AB257B6B96008E6023 /* FourByFourChallenge.swift */,
 				84EFD5FA25783F8400C22C9A /* SquareCell.swift */,
 				84970A242575E1C5001D5543 /* NormalMode.swift */,
 				84970A7125771088001D5543 /* ChallengeMode.swift */,
+				849BF8A6257B6311008E6023 /* ChallengeView.swift */,
 				84970A762577109D001D5543 /* ImageMode.swift */,
 				84970A2E2575FE07001D5543 /* SquareView.swift */,
 				849709FA2575E18A001D5543 /* Assets.xcassets */,
@@ -280,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849BF8AC257B6B96008E6023 /* FourByFourChallenge.swift in Sources */,
 				84EFD5FB25783F8400C22C9A /* SquareCell.swift in Sources */,
 				84970A252575E1C5001D5543 /* NormalMode.swift in Sources */,
 				84970A3925760167001D5543 /* FiveByFiveGameView.swift in Sources */,
@@ -288,6 +295,7 @@
 				849709F92575E184001D5543 /* ContentView.swift in Sources */,
 				84970A7225771088001D5543 /* ChallengeMode.swift in Sources */,
 				849709F72575E184001D5543 /* FinalProjectApp.swift in Sources */,
+				849BF8A7257B6311008E6023 /* ChallengeView.swift in Sources */,
 				84970A772577109D001D5543 /* ImageMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,7 +463,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.FinalProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FinalProjectshengxianchen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -477,7 +485,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.FinalProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FinalProjectshengxianchen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

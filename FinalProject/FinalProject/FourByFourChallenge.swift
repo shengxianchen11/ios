@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct FourByFourGameView: View {
+struct FourByFourChallenge: View {
     private let screenWidth : CGFloat = UIScreen.main.bounds.width
     private let screenHeight : CGFloat = UIScreen.main.bounds.height
-    @EnvironmentObject var env : NormalMode
+    @EnvironmentObject var env : ChallengeMode
     @State var menu : Bool = false
     var body: some View {
         VStack {
@@ -65,17 +65,17 @@ struct FourByFourGameView: View {
                 
             }.padding(.top, screenHeight / 15)
             Spacer().frame(width: screenWidth, height: screenHeight / 7, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            BoardView().padding().environmentObject(env)
+            BoardViewC().padding().environmentObject(env)
             Spacer()
-        }.frame(width: screenWidth, height: screenHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding().background(Color(#colorLiteral(red: 0.976922214, green: 0.9693550467, blue: 0.9294282794, alpha: 1))).alert(isPresented: $env.gameState) {
+        }.navigationBarHidden(true).frame(width: screenWidth, height: screenHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding().background(Color(#colorLiteral(red: 0.976922214, green: 0.9693550467, blue: 0.9294282794, alpha: 1))).alert(isPresented: $env.gameState) {
             Alert(title: Text("You \(env.didW ? "Win!": "Lose!")"), message: Text(env.endingInfo), dismissButton: .default(Text("okay")))
         }
     }
 }
 
-struct BoardView: View {
+struct BoardViewC: View {
     @Namespace var namespace
-    @EnvironmentObject var env : NormalMode
+    @EnvironmentObject var env : ChallengeMode
     private let width : CGFloat = UIScreen.main.bounds.width / 1.3 + 15
     private var rows : [GridItem] = [
         GridItem(.fixed((UIScreen.main.bounds.width / 1.3 + 15) / 4 - 4), spacing: 4),
@@ -91,13 +91,13 @@ struct BoardView: View {
                 ForEach(env.curSquares, id : \.id) { item in
                     SquareView(sq:item).frame(width: width / 4 - 4, height: width / 4 - 4)
                 }
-            }.animation(.easeInOut(duration: 0.5)).modifier(SwipeModifier())
+            }.animation(.easeInOut(duration: 0.5)).modifier(SwipeModifierC())
         }
     }
 }
 
-struct SwipeModifier : ViewModifier {
-    @EnvironmentObject var env : NormalMode
+struct SwipeModifierC : ViewModifier {
+    @EnvironmentObject var env : ChallengeMode
     func body(content: Content) -> some View {
         return content.gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onEnded({ value in
             if value.translation.width < 0 && abs(value.translation.width) > abs(value.translation.height){
@@ -118,9 +118,8 @@ struct SwipeModifier : ViewModifier {
         }))
     }
 }
-
-struct FourByFourGameView_Previews: PreviewProvider {
+struct FourByFourCha_Previews: PreviewProvider {
     static var previews: some View {
-        FourByFourGameView().environmentObject(NormalMode())
+        FourByFourChallenge().environmentObject(ChallengeMode())
     }
 }

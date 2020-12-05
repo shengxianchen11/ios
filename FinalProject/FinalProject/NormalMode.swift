@@ -16,6 +16,7 @@ class NormalMode : ObservableObject {
     private var tempBoard : [Int] = []
     @Published var curSquares : [Square] = []
     @Published var endingInfo : String = ""
+    @Published var didW : Bool = false
     
     init() {
         restart()
@@ -27,8 +28,8 @@ class NormalMode : ObservableObject {
         self.curBoard.removeAll()
         self.tempBoard.removeAll()
         for _ in 0..<boardsize * boardsize {
-            self.curBoard.append(8)
-            self.tempBoard.append(8)
+            self.curBoard.append(0)
+            self.tempBoard.append(0)
         }
         
         generateNewNum()
@@ -56,6 +57,8 @@ class NormalMode : ObservableObject {
         if (current.count == 0) {
             if (didLose()) {
                 print("lose the game")
+            } else if (didWin()) {
+                print("win the game")
             }
             return
         }
@@ -234,6 +237,12 @@ class NormalMode : ObservableObject {
     
     /** Return true if the game already win*/
     func didWin() -> Bool{
+        if curBoard.contains(2048) {
+            gameState = true
+            endingInfo = "You've reach 2048, would you like to continue?"
+            didW = true
+            return true
+        }
         return false
     }
     
