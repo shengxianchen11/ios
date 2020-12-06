@@ -24,9 +24,10 @@ class ChallengeMode : ObservableObject {
     @Published var endingInfo : String = ""
     @Published var didW : Bool = false
     @Published var curNodes : [ChallengeNode] = []
-    
+    @Published var curNode : ChallengeNode = ChallengeNode(val: 0, done: false)
+    @Published var missions : [Mission] = []
     init() {
-        restart()
+        resetBoard()
     }
     
     func changeLevel(l : Int) {
@@ -34,7 +35,6 @@ class ChallengeMode : ObservableObject {
     }
     func restart() {
         
-        setNode()
         gameState = false
         currentScore = 0
         self.curBoard.removeAll()
@@ -43,17 +43,44 @@ class ChallengeMode : ObservableObject {
             self.curBoard.append(0)
             self.tempBoard.append(0)
         }
-        
         generateNewNum()
         generateNewNum()
         copy(from: &curBoard, to: &tempBoard)
         setSquare()
     }
     
-    func setNode() {
-        for i in 0..<progress.count {
-            curNodes.append(ChallengeNode(val: i + 1, done: progress[i]))
+    func resetBoard() {
+        setNode()
+        curNode = curNodef()
+        setMission()
+        restart()
+    }
+    
+    
+    func completeness(goal : Int) -> Int {
+        var count = 0
+        for i in curBoard {
+            if i == goal {
+                count += 1
+            }
         }
+        return count
+    }
+    func setMission() {
+        missions.removeAll()
+        for item in curNode.requirement {
+            missions.append(Mission(comb: item))
+        }
+    }
+    
+    func setNode() {
+        curNodes.removeAll()
+        for i in 0..<progress.count {
+            curNodes.append(ChallengeNode(val: i, done: progress[i]))
+        }
+    }
+    func curNodef() -> ChallengeNode {
+        return curNodes[currLevel]
     }
     
     func setSquare() {
@@ -257,12 +284,10 @@ class ChallengeMode : ObservableObject {
     func count(goal : Int, num: Int) -> Bool {
         var count = 0
         for item in curBoard {
-            print("item is \(item)")
             if item == goal {
                 count += 1
             }
         }
-        print("count is \(count)")
         return count >= num
     }
     
@@ -271,19 +296,17 @@ class ChallengeMode : ObservableObject {
         let node = curNodes[currLevel]
         
         let lst = node.requirement
-        print(lst)
-        var i = 0
         var check = true
-        while i < lst.count {
-            check = check && count(goal: lst[i+1], num: lst[i])
-            print("check is \(check)")
-            i += 2
+        for item in lst {
+            check = check && count(goal: item[1], num: item[0])
         }
         if check {
+            if (currLevel + 1 < progress.count) {
+                progress[currLevel + 1] = true
+            }
             didW = true
             gameState = true
         }
-        print(check)
         return check
     }
     

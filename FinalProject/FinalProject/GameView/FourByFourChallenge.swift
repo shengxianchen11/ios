@@ -11,6 +11,7 @@ struct FourByFourChallenge: View {
     private let screenWidth : CGFloat = UIScreen.main.bounds.width
     private let screenHeight : CGFloat = UIScreen.main.bounds.height
     @EnvironmentObject var env : ChallengeMode
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var menu : Bool = false
     var body: some View {
         VStack {
@@ -30,11 +31,15 @@ struct FourByFourChallenge: View {
                     }
                     
                     NavigationLink(
-                        destination: ContentView(),
+                        destination: ChallengeView().environmentObject(env),
                         isActive: $menu) {
                         EmptyView()
                     }
-                    Button (action: {self.menu.toggle()}) {
+                    Button (action: {
+                        env.resetBoard()
+                        self.menu.toggle()
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 5).frame(width: screenWidth / 3.5, height: screenWidth / 3.5 - screenWidth / 5 - 10).foregroundColor(Color(#colorLiteral(red: 0.9306581616, green: 0.6017062068, blue: 0.3565655947, alpha: 1)))
                             Text("MENU").bold().foregroundColor(.white)
@@ -64,11 +69,15 @@ struct FourByFourChallenge: View {
                 }
                 
             }.padding(.top, screenHeight / 15)
-            Spacer().frame(width: screenWidth, height: screenHeight / 7, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                LazyVGrid(columns: [GridItem(.fixed((UIScreen.main.bounds.width / 1.3 + 15) / 4 - 4), spacing: 4)]) {
+                    ForEach (env.missions, id: \.id) {mission in
+                        Text("\(mission.num) : \(mission.goal)").bold().foregroundColor(.yellow)
+                    }
+                }.frame(height: screenHeight / 10)
             BoardViewC().padding().environmentObject(env)
             Spacer()
         }.navigationBarHidden(true).frame(width: screenWidth, height: screenHeight, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding().background(Color(#colorLiteral(red: 0.976922214, green: 0.9693550467, blue: 0.9294282794, alpha: 1))).alert(isPresented: $env.gameState) {
-            Alert(title: Text("You \(env.didW ? "Win!": "Lose!")"), message: Text(env.endingInfo), dismissButton: .default(Text("okay")))
+            Alert(title: Text("You \(env.didW ? "Win!": "Lose!")"), message: Text(env.endingInfo), dismissButton: env.didW ? .default(Text("okay")) : .default(Text("okay")))
         }
     }
 }
@@ -120,6 +129,6 @@ struct SwipeModifierC : ViewModifier {
 }
 struct FourByFourCha_Previews: PreviewProvider {
     static var previews: some View {
-        FourByFourChallenge().environmentObject(ChallengeMode())
+        FourByFourChallenge()
     }
 }

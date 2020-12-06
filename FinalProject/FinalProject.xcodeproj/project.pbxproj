@@ -122,20 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				849709F62575E184001D5543 /* FinalProjectApp.swift */,
-				849709F82575E184001D5543 /* ContentView.swift */,
-				84970A3825760167001D5543 /* FiveByFiveGameView.swift */,
-				84970A5D257605B5001D5543 /* FourByFourGameView.swift */,
-				849BF8AB257B6B96008E6023 /* FourByFourChallenge.swift */,
+				849BF8B4257C3A7A008E6023 /* GameView */,
+				849BF8B3257C3A64008E6023 /* GameMode */,
 				84EFD5FA25783F8400C22C9A /* SquareCell.swift */,
-				84970A242575E1C5001D5543 /* NormalMode.swift */,
-				4DB62BA7257B88510092AD3A /* FBoardMode.swift */,
-				84970A7125771088001D5543 /* ChallengeMode.swift */,
-				849BF8A6257B6311008E6023 /* ChallengeView.swift */,
-				84970A762577109D001D5543 /* ImageMode.swift */,
-				84970A2E2575FE07001D5543 /* SquareView.swift */,
-				4DB62BCB257B9D640092AD3A /* PicGameView.swift */,
-				4DB62BB7257B9C620092AD3A /* PicMode.swift */,
-				4DB62BAF257B97F30092AD3A /* PicSqView.swift */,
 				849709FA2575E18A001D5543 /* Assets.xcassets */,
 				849709FF2575E18A001D5543 /* Info.plist */,
 				849709FC2575E18A001D5543 /* Preview Content */,
@@ -167,6 +156,33 @@
 				84970A152575E18B001D5543 /* Info.plist */,
 			);
 			path = FinalProjectUITests;
+			sourceTree = "<group>";
+		};
+		849BF8B3257C3A64008E6023 /* GameMode */ = {
+			isa = PBXGroup;
+			children = (
+				84970A242575E1C5001D5543 /* NormalMode.swift */,
+				84970A762577109D001D5543 /* ImageMode.swift */,
+				84970A7125771088001D5543 /* ChallengeMode.swift */,
+				4DB62BA7257B88510092AD3A /* FBoardMode.swift */,
+				4DB62BB7257B9C620092AD3A /* PicMode.swift */,
+			);
+			path = GameMode;
+			sourceTree = "<group>";
+		};
+		849BF8B4257C3A7A008E6023 /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				84970A3825760167001D5543 /* FiveByFiveGameView.swift */,
+				849709F82575E184001D5543 /* ContentView.swift */,
+				84970A5D257605B5001D5543 /* FourByFourGameView.swift */,
+				849BF8AB257B6B96008E6023 /* FourByFourChallenge.swift */,
+				849BF8A6257B6311008E6023 /* ChallengeView.swift */,
+				4DB62BCB257B9D640092AD3A /* PicGameView.swift */,
+				84970A2E2575FE07001D5543 /* SquareView.swift */,
+				4DB62BAF257B97F30092AD3A /* PicSqView.swift */,
+			);
+			path = GameView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
